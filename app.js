@@ -1,10 +1,20 @@
-// console.log(window); //!NOTE--1.0 <- Holds information and functionality related to the active browser window.
-// console.log({ document }); //!NOTE--1.1 <- Holds information and functionality related to the loaded website content
+let paragraphElement = document.querySelector("p");
+let inputElement = document.querySelector("input");
 
-console.log(document);
-console.dir(document); //!NOTE--2.0 <- logs the document object as object not as HTML( the build in behavior of CHROME.Prob not the case anymore because the console.log output is different every time!? )
-console.log(document.body.children); // <- [h1, p, script]
-console.log(document.body.children.length); // <- 3
+function changeParagraphText() {
+  paragraphElement.textContent = "Clicked!";
+}
 
-// stinky stinky
-document.body.children[1].children[0].href = 'https://google.com' // <- change the href value for the link element
+function handleInput(event) {
+  let enteredText = inputElement.value;
+  let enteredText2 = event.target.value;
+  let enteredText3 = event.data; // => this is different thant the above
+
+  console.log(enteredText2);
+  // console.log(event);
+}
+
+paragraphElement.addEventListener("click", changeParagraphText);
+
+//! NOTE: input event essentially also react to keyup events but in addition it also pick ups dragging and dropping a value into the input field or pasting it into the input field this input event will fire. That is the event we typically listen to when we work with inputs
+inputElement.addEventListener("input", handleInput);

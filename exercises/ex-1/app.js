@@ -1,0 +1,30 @@
+// Exercise Time!
+
+// 1. Select the <h1> element by "drilling into the DOM" and
+//    save it in a variable with a name of your choice
+let task1 = document.body.children[0];
+console.dir(task1); //* <- h1
+// 2. Use the variable from (1) and get access to the "parent"
+//    element of the stored <h1> element (i.e. to the <body> element)
+let task2 = task1.parentElement;
+console.dir(task2); //* <- body
+
+//    BONUS: Try using the variable from (1) to get access to the
+//    sibling element (i.e. the <p> element next to the <h1> element)
+let task2Bonus = task1.nextElementSibling;
+//! let task2Bonus = task1.nextSibling; //<- #text <- (/n)
+console.dir(task2Bonus); //* <- p
+// 3. Select the <h1> element with getElementById and store in
+//    the same or a new variable (up to you)
+let task3 = document.getElementById("idForH1Element");
+console.dir(task3) //* <- h1#idForH1Element
+// 4. Select the second <p> element with querySelector (you might
+//    need to add something in the HTML code, e.g. a class)
+//    and store it in a new variable with a name of your choice
+let task4 = document.querySelector('.secondParagrahpClass');
+console.dir(task4); //* <- p.secondParagrahpClass
+console.dir(task4.textContent); //* <- Hello I am a paragraph with Link
+// 5. BONUS TASK: Try changing the text content of the <p> element
+//    you selected in (4) and set it to any other text of your choice
+task4.innerText = 'Hello World!';  
+console.dir(task4.textContent); //* <- Hello World!
